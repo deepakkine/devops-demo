@@ -18,6 +18,9 @@ jobs:
     - name: Debug files
       run: ls -R
 
+    - name: Show Dockerfile location
+      run: find . -name Dockerfile
+
     - name: Build image
       run: docker build -f ./Dockerfile -t ghcr.io/${{ secrets.GHCR_USERNAME }}/devops-demo:latest .
 
