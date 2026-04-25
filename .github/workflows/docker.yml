@@ -22,7 +22,7 @@ jobs:
       run: find . -name Dockerfile
 
     - name: Build image
-      run: docker build -f ./devops-demo/Dockerfile -t ghcr.io/${{ secrets.GHCR_USERNAME }}/devops-demo:latest .
+      run: cd devops-demo | docker build -t ghcr.io/${{ secrets.GHCR_USERNAME }}/devops-demo:latest .
 
     - name: Push image
       run: docker push ghcr.io/${{ secrets.GHCR_USERNAME }}/devops-demo:latest
